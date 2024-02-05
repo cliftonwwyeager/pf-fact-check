@@ -83,8 +83,8 @@ def main():
     args = parser.parse_args()
     
     speaker_scores = analyze_speakers_in_article(args.url)
-    file_path = os.path.join(args.output, 'speaker_scores.json')  # Construct the file path using the output directory
-    os.makedirs(args.output, exist_ok=True)  # Ensure the output directory exists
+    file_path = os.path.join(args.output, 'speaker_scores.json')
+    os.makedirs(args.output, exist_ok=True)
     
     with open(file_path, 'w') as file:
         json.dump(speaker_scores, file, indent=4)
